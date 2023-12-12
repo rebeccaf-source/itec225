@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title> Compound Interest Calculator</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@2.1.0/build/pure-min.css" integrity="sha384-yHIFVG6ClnONEA5yB5DJXfW2/KC173DIQrYoZMEtBvGzmf0PKiGyNEqe9N6BNDBH" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="/favicon(1).ico" type="image/x-icon">
+    <link rel="icon" href="/favicon(1).ico" type="image/x-icon">
+
+    <style>
+        body {
+            background-color: #92e3b3;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%232e664f' fill-opacity='0.61' fill-rule='evenodd'/%3E%3C/svg%3E");
+            margin: 0 10%;
+            font-family: sans-serif;
+        }
+
+        h1 {
+            background-color: #ffffff;
+            text-align: center;
+            font-family: serif;
+            font-weight: normal;
+            text-transform: uppercase;
+            border-bottom: 5px solid #000000;
+            margin-top: 30px;
+            margin-bottom: 0px;
+
+        }
+
+        form {
+            background-color: #ffffff;
+            text-align: center;
+            font-family: serif;
+            font-weight: bolder;
+
+
+        }
+
+        input {
+            width: 60%;
+        }
+
+        button {
+            background-color: #f3f0f0;
+            width: 50%;
+            margin-left: 25%;
+            margin-right: 25%;
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        p {
+            background-color: #ffffff;
+            text-align: center;
+            font-family: serif;
+            font-size: 16px;
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>
+        <br />Compound Interest Calculator</h1>
+
+    <form action="/action_page/php" method="post">
+        <br />
+
+        Principle : <br /><input type="number" id="p" placeholder="Amount">
+        <br />
+        <br />
+
+        Interest Rate : <br /><input type="number" id="i" placeholder="Rate in %">
+        <br />
+        <br />
+
+        Periods : <br /><input type="number" id="r" placeholder="Period">
+        <br />
+        <br />
+
+        Overall Time : <br /><input type="number" id="t" placeholder="TimeMoneyIsInvested">
+        <br />
+        <br />
+
+
+
+    </form>
+    <p>
+        <button onclick="myFunction()">Calculate</button>
+        <br />
+        <br />
+    </p>
+
+    <p id="demo"></p>
+    <p>
+
+        <script type="text/javascript">
+            function myFunction() {
+                var principle = document.getElementById("p").value;
+                var rate = document.getElementById("i").value;
+                var time = document.getElementById("t").value;
+                var period = document.getElementById("r").value;
+
+                var ans = principle * Math.pow((1 + rate / period), (period * time));
+
+                document.getElementById("demo").innerHTML = "Final Amount: $" + ans;
+
+
+            }
+
+
+        </script>
+        <br />
+        <br />
+    </p>
+
+</body>
+
+</html>

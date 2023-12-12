@@ -1,0 +1,27 @@
+<!doctype html>
+ <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="Password Generator">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="password.js" defer></script>
+        <title>Password Generator</title>
+      </head> 
+
+      <body>
+<h1><br>Welcome to the Password Generator</h1>
+<h3><br>Check off what you would like in your password</h3>
+<p><br>
+
+<label>Password Length: <input type="text" name="passwordLength" id="length"></label><br>
+<label><input type="checkbox" name="uppercase" id="upper"> Contains Uppercase Letters: </label><br>
+<label><input type="checkbox" name="lower" id="lower"> Contains Lowercase Letters </label><br>
+<label><input type="checkbox" name="numbers" id="numbers"> Contains Numbers: </label><br>
+<label><input type="checkbox" name="symbols" id="symbols"> Contains Symbols</label><br>
+
+<button type="submit" onclick="generatePassword()">Generate Password</button>
+<br><br></p>
+
+<p id="demo"></p><p><br><br></p>
+      </body>
+ </html>

@@ -1,0 +1,18 @@
+h1{
+    text-align: center;
+    background-color: aquamarine;
+}
+p {
+    text-align: center;
+    background-color: aqua;
+    font-size: larger;
+}
+button {
+    margin-left: 45%;
+}
+
+#demo
+{
+    background-color: white;
+    text-align: center;
+}

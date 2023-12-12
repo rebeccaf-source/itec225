@@ -1,0 +1,16 @@
+body 
+{
+    font-family:'Times New Roman', Times, serif;
+    margin-right: 50%;
+}
+.badge
+{
+    width: 20%;
+    float: right;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+p 
+{
+    font-size: larger;
+}

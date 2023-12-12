@@ -1,0 +1,74 @@
+body {
+  background-color: white;
+}
+
+h1 {
+  color: #02472e;
+  margin-right: 50px;
+  text-align: center;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+
+} 
+
+hr{
+  margin-left: 80px;
+  margin-right: 100px;
+}
+a {
+  color: #02472e;
+}
+
+h2 {
+  color: #02472e;
+  margin-left: 120px;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  margin-top: 0px;
+}
+
+h4 {
+  color: #046843;
+  margin-left: 200px;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  font-size:18px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+p {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin-left: 200px;
+  margin-right: 250px;
+  margin-top: 0px;
+  margin-bottom: 15px;
+
+}
+
+ul {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin-left: 200px;
+  margin-top: 0px;
+}
+li {
+  list-style-type: square;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+p.normal {
+  font-style: normal;
+}
+
+p.italic {
+  font-style: italic;
+}
+
+p.oblique {
+  font-style: oblique;
+}
+
+#personalInfo
+{
+  text-align: center;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  
+}

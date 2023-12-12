@@ -1,0 +1,67 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+
+<head></head>
+
+<body>
+
+
+
+
+
+
+
+
+    <div class="container">
+        <div class="main">
+
+
+            <h2>--Calculate Factorial--</h2>
+
+            <h5> Calculate factorials by taking in user inputs.
+            </h5>
+            <hr />
+
+            <body>
+
+                <form action="/action_page/php" method="post">
+                    Factorial : <input type="number" id="p">
+                    <br />
+                    <br />
+                </form>
+                <button onclick="calculate()">Submit</button>
+
+                <p id="demo"></p>
+
+                <script type="text/javascript">
+
+                    function recursion(a) {
+                        if (a == 1) {
+                            return a;
+                        }
+                        else {
+                            return a = a * recursion(a - 1);
+                        }
+                    }
+                    function calculate() {
+                        var factorial = document.getElementById("p").value;
+                        var ans = recursion(factorial);
+
+                        document.getElementById("demo").innerHTML = ans;
+                    }
+
+                </script>
+
+            </body>
+
+
+        </div>
+    </div>
+    <br />
+    <br />
+    <br />
+    <p></p>
+</body>
+
+</html>

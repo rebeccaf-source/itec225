@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<meta charset = "utf-8">
+<link rel="stylesheet" href="">
+<title>Morse Code Converter</title>
+
+<style>
+    body
+    {
+        background-color: #eaeaea;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='49' viewBox='0 0 28 49'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='hexagons' fill='%23069061' fill-opacity='1' fill-rule='nonzero'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    h1
+    {
+        text-align: center;
+        background-color: #ffffff;
+        margin-top: 30px;
+        margin-bottom: 0%;
+    }
+    p
+    {
+        background-color: #ffffff;
+        margin-top: 0%;
+        margin-bottom: 0%;
+    }
+    hr
+    {
+        background-color: #ffffff;
+        margin-top: 0%; 
+        margin-bottom: 0%;
+    }
+    button
+    {
+        background-color: #ffffff;
+        width: 10%;
+        margin-left: 2%;
+        margin-top: 0;
+        margin-bottom: 0;
+        display: inline-block;
+    }
+    input
+    {
+        background-color: #ffffff;
+        width: 10%;
+        margin-left: 2%;
+        margin-top: 0;
+        margin-bottom: 0;
+        display: inline-block;
+    }
+    form
+    {
+        background-color: #ffffff;
+    }
+    textarea
+    {
+        margin-left: 1%;
+        width: 98%;
+    }
+
+</style>
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+
+<body>
+    <h1>Morse Code Converter</h1>
+    <p><br><br>&nbsp;&nbsp;Translate a Message<hr></p>
+
+    <form  method="post">
+        <br>
+
+        <label for="input">&nbsp;&nbsp;&nbsp;&nbsp;Input:<br></label>
+        <textarea name="input" id="it" rows = "5"></textarea>
+        
+        <br><br>
+        <input type="reset" value="Clear">
+        <br><br>
+        <label for="output">&nbsp;&nbsp;&nbsp;&nbsp;Output:<br></label>
+        <textarea name="output" id="ot" rows="5"></textarea>
+        
+        <br><br>
+    </form>
+    <p>
+        <button type="submit" onclick="convertToMorse()">C2MC</button>
+        <button type="submit" onclick="convertFromMorse()">MC2C</button>
+
+        <br><br>
+    </p>
+
+        <script type="text/javascript">
+            var morse = new Map([
+                [".-" , "A"],  ["-..." , "B"], ["-.-." , "C"] , ["-.." , "D"], ["." , "E"], ["..-." , "F"], ["--." , "G"], ["...." , "H"], [".." , "I"], [".---" , "J"], ["-.-" , "K"], [".-.." , "L"], ["--" , "M"], ["-." , "N"], ["---" , "O"], [".--." ,"P"], ["--.-" , "Q"], [".-." , "R"], ["..." , "S"], ["-" , "T"], ["..-" , "U"], ["...-" , "V"], [".--" , "W"], ["-..-" , "X"], ["-.--" , "Y"], ["--.." , "Z"], [".----", "1"], ["..---" , "2"], ["...--" , "3"], ["....-" , "4"], ["....." , "5"], ["-...." , "6"], ["--..." , "7"], ["---.." , "8"], ["----.",  "9"], ["-----" , "0"], [".-.-.-", "."], ["--..--" , ","], ["..--.." , "?"], [".----." , "'"], ["-.-.--" , "!"], ["-..-." , "/"], ["-.--" , "("], ["--.--." , ")"], ["-....-" , "-"], ["|" , " "]]);
+            var clear = new Map([
+                ["A" , ".-"] , ["B" , "-..."] , ["C" , "-.-."], ["D" , "-.."], ["E" , "."], ["F" , "--.-"], ["G" , "--."], ["H" , "...."], ["I" , ".."], ["J" , ".---"], ["K" , "-.-"], ["L" , ".-.."], ["M" , "--"], ["N" , "-."], ["O" , "---"], ["P" , ".--."], ["Q" , "--.-"], ["R" , ".-."], ["S" , "..."], ["T" , "-"], ["U" , "..-"], ["V" , "...-"], ["W" , ".--"], ["X" , "-..-"], ["Y" , "--.."], ["Z" , "--.."], ["1" , ".----"], ["2" , "..---"], ["3" , "...--"], ["4" , "....-"], ["5" , "....."], ["6" , "-...."], ["7" , "--..."], ["8" , "---.."], ["9" , "----."], ["0" , "-----"], ["." , ".-.-.-"], ["," , "--..--"], ["?" , "..--.."], ["'" , ".----."], ["!" , "-.-.--"], ["/" , "-..-."], ["(" , "-.--."], [")" , "-.--.-"], ["-" , "-....-"], [" ", "|"]]);
+            function convertToMorse()
+            {
+                let given = document.getElementById("it").value;
+
+               var out = "";
+                for(let i = 0; i < given.length; i++)
+                {
+                    out += clear.get(given.charAt(i).toUpperCase()) + " ";
+                }
+                document.getElementById("ot").innerHTML = out;
+            }
+            function convertFromMorse()
+            {
+                var given = "" + document.getElementById("it").value;
+                var get = given.split(" ");
+                var out = "";
+                for(let i = 0; i < get.length; i++)
+                {
+                    out += morse.get(get[i]);
+                }
+                document.getElementById("ot").innerHTML = out;
+            }
+
+        </script>
+            
+    
+
+
+</body>
+
+</html>
